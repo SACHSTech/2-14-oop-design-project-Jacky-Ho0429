@@ -6,4 +6,9 @@ See instructions [here](INSTRUCTIONS.md) for details.
 *INSERT UML CLASS DIAGRAM HERE*  
 
 ## Summary
-*Write a brief summary that describes the real-world system you are modelling in your design.*
+A garden management system that allows users to keep track of multiple gardens, view the plants in each garden, and add logs or notes related to plant care, growth progress, or maintenance tasks. It helps users stay organized and monitor the health and development of their gardens over time.
+
+
+
+
+
