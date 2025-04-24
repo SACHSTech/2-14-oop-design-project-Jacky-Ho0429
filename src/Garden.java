@@ -5,6 +5,7 @@ public class Garden {
     int id;
     String name;
     String location;
+    private List<Plant> gardenPlants = new ArrayList<>();
     private List<GardenLog> gardenLog = new ArrayList<>();
 
     public Garden(int id, String name, String location) {
@@ -13,8 +14,24 @@ public class Garden {
         this.location = location;
     }
 
+    public void addPlant(Plant plant) {
+        gardenPlants.add(plant);
+    }
+
+    public List<Plant> getPlants() {
+        return gardenPlants;
+    }
+
+    public void getPlantSize(Plant plant) {
+        gardenPlants.add(plant);
+    }
+
     public void addLog(GardenLog event) {
         gardenLog.add(event);
+    }
+
+    public String getLog() {
+        return gardenLog.toString();
     }
 
     public int getLogSize() {

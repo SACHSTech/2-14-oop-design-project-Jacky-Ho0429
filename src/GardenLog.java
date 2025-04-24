@@ -3,13 +3,15 @@ import java.util.List;
 
 public class GardenLog {
     private int gardenId;
+    private String gardenName;
     private String gardenerName;
     private String date;
     private String plant;
     private String event;
 
-    public GardenLog(int gardenId, String gardenerName, String date, String plant, String event) {
+    public GardenLog(int gardenId, String gardenName, String gardenerName, String date, String plant, String event) {
         this.gardenId = gardenId;
+        this.gardenName = gardenName;
         this.gardenerName = gardenerName;
         this.date = date;
         this.event = event;
@@ -34,4 +36,8 @@ public class GardenLog {
     public String getEvent() {
         return event;
     }
+
+    public String toString() {
+        return gardenerName + " " + event + " at " + gardenName + " on " + date;
+    }    
 }
