@@ -21,6 +21,7 @@ public class Main {
 
         g1.addPlant(p1);
 
-        System.out.print(g1.getLog());
+        System.out.println(g1.getLog(1));
+        System.out.println(g1.getLog(2));
     }
 }

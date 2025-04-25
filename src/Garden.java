@@ -30,8 +30,8 @@ public class Garden {
         gardenLog.add(event);
     }
 
-    public String getLog() {
-        return gardenLog.toString();
+    public String getLog(int logNumber) {
+        return gardenLog.get(logNumber - 1).toString();
     }
 
     public int getLogSize() {
