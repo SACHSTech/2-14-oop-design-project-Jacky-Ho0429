@@ -18,8 +18,16 @@ public class Garden {
         gardenPlants.add(plant);
     }
 
-    public List<Plant> getPlants() {
-        return gardenPlants;
+    public String getPlants() {
+        String plantList = "";
+        for (int i = 0; i < gardenPlants.size(); i++) {
+            Plant plant = gardenPlants.get(i);
+            plantList += plant.getName();
+            if (i != gardenPlants.size() - 1) {
+                plantList += ", ";
+            }
+        }
+        return plantList;
     }
 
     public void getPlantSize(Plant plant) {
