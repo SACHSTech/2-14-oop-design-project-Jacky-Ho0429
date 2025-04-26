@@ -14,10 +14,7 @@ public class Main {
         Garden g6 = new Garden(6, "Not A Farm", "Pluto"); //Submitted By Lucianp
         Garden g7 = new Garden(7, "Potato Famine", "Dublin, Ireland"); //Submitted By Christopher Xia
 
-        Fruit p1 = new Fruit("apple tree", "fruit" , 2);
-        Fruit p2 = new Fruit("banana tree", "fruit" , 2);
-        Fruit p3 = new Fruit("orange tree", "fruit" , 2);
-        Fruit p4 = new Fruit("pear tree", "fruit" , 2);
+        Perennial p1 = new Perennial("Peonies", 2, 2);
 
 
         GardenLog l1 = new GardenLog(1, g1.getName(), "Jacky", "2024-07-29", p1.getName(), "watered the " + p1.getName() );
@@ -27,9 +24,6 @@ public class Main {
         g1.addLog(l2);
 
         g1.addPlant(p1);
-        g1.addPlant(p2);
-        g1.addPlant(p3);
-        g1.addPlant(p4);
 
         System.out.println(g1.getLog(1));
         System.out.println(g1.getLog(2));
