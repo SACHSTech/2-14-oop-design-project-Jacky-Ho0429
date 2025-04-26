@@ -39,7 +39,7 @@ public class Garden {
     }
 
     public String getLog(int logNumber) {
-        return gardenLog.get(logNumber - 1).toString();
+        return gardenLog.get(logNumber - 1).toString() + " located at " + location;
     }
 
     public int getLogSize() {

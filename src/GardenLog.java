@@ -38,6 +38,6 @@ public class GardenLog {
     }
 
     public String toString() {
-        return gardenerName + " " + event + " at " + gardenName + " on " + date;
+        return gardenerName + " " + event + " on " + date + " at " + gardenName;
     }    
 }
