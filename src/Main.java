@@ -47,9 +47,9 @@ public class Main {
          *
          */
 
-        GardenLog l1 = new GardenLog(5, g5.getName(), "Jacky", "2024-07-29", p1.getName(), "watered the " + p1.getName() );
-        GardenLog l2 = new GardenLog(5, g5.getName(), "Jacky", "2024-07-30", p1.getName(), "found out the " + p1.getName() + " died");
-
+        GardenLog l1 = new GardenLog(5, g5.getName(), "Jacky", "2", p1.getName(), "watered the " + p1.getName() );
+        GardenLog l2 = new GardenLog(5, g5.getName(), "Jacky", "5", p1.getName(), "found out the " + p1.getName() + " died");
+        
         if (l1.getGardenId() == 5) {
             g5.addLog(l1);
         } else if (l1.getGardenId() == 6) {
@@ -65,8 +65,8 @@ public class Main {
         g5.addPlant(p1);
 
         System.out.println(g5.getLog(1));
+        System.out.println(g5.getLog(2));
         System.out.println(g5.getPlants());
-        System.out.println(g5.checkPlants());
         System.out.println(g5.checkPlants());
     }
 }

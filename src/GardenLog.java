@@ -13,6 +13,7 @@ public class GardenLog {
         this.gardenId = gardenId;
         this.gardenName = gardenName;
         this.gardenerName = gardenerName;
+        this.plant = plant;
         this.date = date;
         this.event = event;
     }

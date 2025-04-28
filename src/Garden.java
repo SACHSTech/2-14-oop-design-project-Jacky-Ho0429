@@ -31,40 +31,39 @@ public class Garden {
     }
 
     public String checkPlants() {
-        String plantList = "";
-        boolean watered = false;
-        int oldWaterDate = 0;
-        int currentWaterDate = 0;
+        String plantDisplayList = "";
+
         for (int i = 0; i < gardenPlants.size(); i++) {
-            for (int j = 0 ; j < gardenLog.size(); j++) {
-                if (gardenLog.get(j).getPlant() == gardenPlants.get(i).getName()) {
+            int lastWaterDate = 0;
+            int lastDate = 0;
+            int currentLogDate = 0;
+            boolean needWater = false;
+            for (int j = 0; j < gardenLog.size(); j++) {
+                if (gardenLog.get(j).getPlant().equals(gardenPlants.get(i).getName())) {
+                    currentLogDate = Integer.parseInt(gardenLog.get(j).getDate());
                     if (gardenLog.get(j).getEvent().contains("watered")) {
-                        if (j == 0) {
-                            currentWaterDate = Integer.parseInt(gardenLog.get(j).getDate()); Integer.parseInt(gardenLog.get(j).getDate());
-                        } else {
-                            oldWaterDate = Integer.parseInt(gardenLog.get(j).getDate());
+                        if (currentLogDate > lastWaterDate) {
+                            lastWaterDate = currentLogDate;
                         }
                     }
-                }
-                if (j < (gardenLog.size() - 1)) {
-                    if (gardenLog.get(j + 1).getPlant() == gardenPlants.get(i).getName()) {
-                        if (gardenLog.get(j + 1).getEvent().contains("watered")) {
-                            currentWaterDate = Integer.parseInt(gardenLog.get(j + 1).getDate());
-                        }
+                    if (currentLogDate > lastDate) {
+                        lastDate = currentLogDate;
                     }
                 }
             }
-            if ((currentWaterDate - oldWaterDate) > gardenPlants.get(i).getWaterInterval()) {
-                watered = false;
+
+            if ((lastDate - lastWaterDate) > gardenPlants.get(i).getWaterInterval()) {
+                needWater = true;
             } else {
-                watered = true;
+                needWater = false;
             }
-            plantList += gardenPlants.get(i).getName()+ " (Needs Water: " + gardenPlants.get(i).needWatering(!watered) + ")";
+
+            plantDisplayList += gardenPlants.get(i).getName() + " (Needs Water: " + needWater + ")";
             if (i != gardenPlants.size() - 1) {
-                plantList += ", ";
+                plantDisplayList += ", ";
             }
         }
-        return plantList;
+        return plantDisplayList;
     }
 
     public void getPlantSize(Plant plant) {
