@@ -33,20 +33,33 @@ public class Garden {
     public String checkPlants() {
         String plantList = "";
         boolean watered = false;
+        int oldWaterDate = 0;
+        int currentWaterDate = 0;
         for (int i = 0; i < gardenPlants.size(); i++) {
-            Plant plant = gardenPlants.get(i);
-            String plantName = gardenPlants.get(i).getName();
             for (int j = 0 ; j < gardenLog.size(); j++) {
-                if (gardenLog.get(j).getPlant() == plantName) {
+                if (gardenLog.get(j).getPlant() == gardenPlants.get(i).getName()) {
                     if (gardenLog.get(j).getEvent().contains("watered")) {
-                        watered = true;
-                        break;
-                    } else {
-                        watered = false;
+                        if (j == 0) {
+                            currentWaterDate = Integer.parseInt(gardenLog.get(j).getDate()); Integer.parseInt(gardenLog.get(j).getDate());
+                        } else {
+                            oldWaterDate = Integer.parseInt(gardenLog.get(j).getDate());
+                        }
+                    }
+                }
+                if (j < (gardenLog.size() - 1)) {
+                    if (gardenLog.get(j + 1).getPlant() == gardenPlants.get(i).getName()) {
+                        if (gardenLog.get(j + 1).getEvent().contains("watered")) {
+                            currentWaterDate = Integer.parseInt(gardenLog.get(j + 1).getDate());
+                        }
                     }
                 }
             }
-            plantList += plant.getName() + " (Needs Water: " + gardenPlants.get(i).needWatering(!watered) + ")";
+            if ((currentWaterDate - oldWaterDate) > gardenPlants.get(i).getWaterInterval()) {
+                watered = false;
+            } else {
+                watered = true;
+            }
+            plantList += gardenPlants.get(i).getName()+ " (Needs Water: " + gardenPlants.get(i).needWatering(!watered) + ")";
             if (i != gardenPlants.size() - 1) {
                 plantList += ", ";
             }
