@@ -33,7 +33,7 @@ public class Main {
          *  1. View plants at the garden
          *  2. Add a new plant to the garden 
          *  3. Add a new garden log
-         *  4. Check what plants need watering
+         *  4. Check if a plant needs watering
          * 
          *  What is the name of the plant you would like to add?
          *  
@@ -41,9 +41,10 @@ public class Main {
          *  1. Annual
          *  2. Biennial
          *  3. Perennial
-         *       
          *  
-         * 
+         *  Here are plants that need watering:
+         *  
+         *
          */
 
         GardenLog l1 = new GardenLog(5, g5.getName(), "Jacky", "2024-07-29", p1.getName(), "watered the " + p1.getName() );
@@ -65,5 +66,7 @@ public class Main {
 
         System.out.println(g5.getLog(1));
         System.out.println(g5.getPlants());
+        System.out.println(g5.checkPlants());
+        System.out.println(g5.checkPlants());
     }
 }

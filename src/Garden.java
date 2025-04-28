@@ -30,6 +30,30 @@ public class Garden {
         return plantList;
     }
 
+    public String checkPlants() {
+        String plantList = "";
+        boolean watered = false;
+        for (int i = 0; i < gardenPlants.size(); i++) {
+            Plant plant = gardenPlants.get(i);
+            String plantName = gardenPlants.get(i).getName();
+            for (int j = 0 ; j < gardenLog.size(); j++) {
+                if (gardenLog.get(j).getPlant() == plantName) {
+                    if (gardenLog.get(j).getEvent().contains("watered")) {
+                        watered = true;
+                        break;
+                    } else {
+                        watered = false;
+                    }
+                }
+            }
+            plantList += plant.getName() + " (Needs Water: " + gardenPlants.get(i).needWatering(!watered) + ")";
+            if (i != gardenPlants.size() - 1) {
+                plantList += ", ";
+            }
+        }
+        return plantList;
+    }
+
     public void getPlantSize(Plant plant) {
         gardenPlants.add(plant);
     }
