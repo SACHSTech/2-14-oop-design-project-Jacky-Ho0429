@@ -1,29 +1,29 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Garden {
-    int id;
-    String name;
-    String location;
-    private List<Plant> gardenPlants = new ArrayList<>();
-    private List<GardenLog> gardenLog = new ArrayList<>();
+public class Farm {
+    private int id;
+    private String name;
+    private String country;
+    private List<Plant> farmPlants = new ArrayList<>();
+    private List<FarmLog> farmLog = new ArrayList<>();
 
-    public Garden(int id, String name, String location) {
+    public Farm(int id, String name, String country) {
         this.id = id;
         this.name = name;
-        this.location = location;
+        this.country = country;
     }
 
     public void addPlant(Plant plant) {
-        gardenPlants.add(plant);
+        farmPlants.add(plant);
     }
 
     public String getPlants() {
         String plantList = "";
-        for (int i = 0; i < gardenPlants.size(); i++) {
-            Plant plant = gardenPlants.get(i);
+        for (int i = 0; i < farmPlants.size(); i++) {
+            Plant plant = farmPlants.get(i);
             plantList += plant.getName();
-            if (i != gardenPlants.size() - 1) {
+            if (i != farmPlants.size() - 1) {
                 plantList += ", ";
             }
         }
@@ -33,15 +33,15 @@ public class Garden {
     public String checkPlants() {
         String plantDisplayList = "";
 
-        for (int i = 0; i < gardenPlants.size(); i++) {
+        for (int i = 0; i < farmPlants.size(); i++) {
             int lastWaterDate = 0;
             int lastDate = 0;
             int currentLogDate = 0;
             boolean needWater = false;
-            for (int j = 0; j < gardenLog.size(); j++) {
-                if (gardenLog.get(j).getPlant().equals(gardenPlants.get(i).getName())) {
-                    currentLogDate = Integer.parseInt(gardenLog.get(j).getDate());
-                    if (gardenLog.get(j).getEvent().contains("watered")) {
+            for (int j = 0; j < farmLog.size(); j++) {
+                if (farmLog.get(j).getPlant().equals(farmPlants.get(i).getName())) {
+                    currentLogDate = Integer.parseInt(farmLog.get(j).getDate());
+                    if (farmLog.get(j).getEvent().contains("watered")) {
                         if (currentLogDate > lastWaterDate) {
                             lastWaterDate = currentLogDate;
                         }
@@ -52,14 +52,14 @@ public class Garden {
                 }
             }
 
-            if ((lastDate - lastWaterDate) > gardenPlants.get(i).getWaterInterval()) {
+            if ((lastDate - lastWaterDate) > farmPlants.get(i).getWaterInterval()) {
                 needWater = true;
             } else {
                 needWater = false;
             }
 
-            plantDisplayList += gardenPlants.get(i).getName() + " (Needs Water: " + needWater + ")";
-            if (i != gardenPlants.size() - 1) {
+            plantDisplayList += farmPlants.get(i).getName() + " (Needs Water: " + needWater + ")";
+            if (i != farmPlants.size() - 1) {
                 plantDisplayList += ", ";
             }
         }
@@ -67,19 +67,19 @@ public class Garden {
     }
 
     public void getPlantSize(Plant plant) {
-        gardenPlants.add(plant);
+        farmPlants.add(plant);
     }
 
-    public void addLog(GardenLog event) {
-        gardenLog.add(event);
+    public void addLog(FarmLog event) {
+        farmLog.add(event);
     }
 
     public String getLog(int logNumber) {
-        return gardenLog.get(logNumber - 1).toString() + " located at " + location;
+        return farmLog.get(logNumber - 1).toString() + " located at " + location;
     }
 
     public int getLogSize() {
-        return gardenLog.size();
+        return farmLog.size();
     }
 
     public int getId() {

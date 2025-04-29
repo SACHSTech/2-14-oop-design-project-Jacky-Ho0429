@@ -6,7 +6,7 @@ See instructions [here](INSTRUCTIONS.md) for details.
 *INSERT UML CLASS DIAGRAM HERE*  
 
 ## Summary
-A garden management system that allows a gardener to keep track of the gardens they work at, and view the plants in each garden, add logs related to plant care, growth progress, or maintenance tasks. It helps users stay organized and monitor the health and development of their gardens over time.
+A farm management system that allows a farmer to keep track of the gardens they work at, and view the plants in each garden, add logs related to plant care, growth progress, or maintenance tasks. It helps users stay organized and monitor the health and development of their gardens over time.
 
 
 

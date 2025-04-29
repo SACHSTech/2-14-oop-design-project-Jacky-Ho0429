@@ -6,15 +6,16 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Garden g1 = new Garden(1, "Kyojh Garden", "Ontario");
-        Garden g2 = new Garden(2, "The Ho Garden", "BJ Avenue"); // Submitted By Preston Wong
-        Garden g3 = new Garden(3, "Mash Potatoes", "Potat"); // Submitted By George Du
-        Garden g4 = new Garden(4, "Joel's Garden", "Joeshmo"); // Submitted By Joel Menezes
-        Garden g5 = new Garden(5, "Dundun Garden", "Dundun Land"); // Submitted By Athena Yeung
-        Garden g6 = new Garden(6, "Not A Farm", "Pluto"); //Submitted By Lucianp
-        Garden g7 = new Garden(7, "Potato Famine", "Dublin"); //Submitted By Christopher Xia
+        Farm f1 = new Farm(1, "Kyojh Farm", "Canada");
+        Farm f2 = new Farm(2, "The Ho Farm", "BJ County"); // Submitted By Preston Wong
+        Farm f3 = new Farm(3, "Mash Farm", "Potat"); // Submitted By George Du
+        Farm f4 = new Farm(4, "Gethsemane", "Isreal"); // Submitted By Joel Menezes
+        Farm f5 = new Farm(5, "Dundun Farm", "Dundun Land"); // Submitted By Athena Yeung
+        Farm f6 = new Farm(6, "Not A Farm", "Pluto"); //Submitted By Lucianp
+        Farm f7 = new Farm(7, "Potato Famine", "Dublin"); //Submitted By Christopher Xia
 
         Biennial p1 = new Biennial("Dundun Fruit", 2, 2);
+
 
         /** User Interface Guideline
          * 
@@ -47,26 +48,29 @@ public class Main {
          *
          */
 
-        GardenLog l1 = new GardenLog(5, g5.getName(), "Jacky", "2", p1.getName(), "watered the " + p1.getName() );
-        GardenLog l2 = new GardenLog(5, g5.getName(), "Jacky", "5", p1.getName(), "found out the " + p1.getName() + " died");
+        FarmLog l1 = new FarmLog(5, f5.getName(), "Jacky", "2", p1.getName(), "watered the " + p1.getName() );
+        FarmLog l2 = new FarmLog(5, f5.getName(), "Jacky", "5", p1.getName(), "found out the " + p1.getName() + " died");
+        FarmLog l3 = new FarmLog(5, f5.getName(), "Jacky", "8", p1.getName(), "watered the " + p1.getName());
         
-        if (l1.getGardenId() == 5) {
-            g5.addLog(l1);
-        } else if (l1.getGardenId() == 6) {
-            g5.addLog(l1);
+        if (l1.getFarmId() == 5) {
+            f5.addLog(l1);
+        } else if (l1.getFarmId() == 6) {
+            f5.addLog(l1);
         }
 
-        if (l2.getGardenId() == 5) {
-            g5.addLog(l2);
-        } else if (l2.getGardenId() == 6) {
-            g6.addLog(l2);
+        if (l2.getFarmId() == 5) {
+            f5.addLog(l2);
+        } else if (l2.getFarmId() == 6) {
+            f6.addLog(l2);
         }
 
-        g5.addPlant(p1);
+        f5.addPlant(p1);
 
-        System.out.println(g5.getLog(1));
-        System.out.println(g5.getLog(2));
-        System.out.println(g5.getPlants());
-        System.out.println(g5.checkPlants());
+        System.out.println(f5.getLog(1));
+        System.out.println(f5.getLog(2));
+        System.out.println(f5.checkPlants());
+        f5.addLog(l3);
+        System.out.println(f5.getLog(3));
+        System.out.println(f5.checkPlants());
     }
 }
