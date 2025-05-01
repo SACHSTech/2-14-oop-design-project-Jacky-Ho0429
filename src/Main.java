@@ -9,14 +9,15 @@ public class Main {
         Farm f1 = new Farm(1, "Kyojh Farm", "Canada");
         Farm f2 = new Farm(2, "The Ho Farm", "BJ County"); // Submitted By Preston Wong
         Farm f3 = new Farm(3, "Mash Farm", "Potat"); // Submitted By George Du
-        Farm f4 = new Farm(4, "Gethsemane", "Isreal"); // Submitted By Joel Menezes
+        Farm f4 = new Farm(4, "Gethsemane Farm", "Isreal"); // Submitted By Joel Menezes
         Farm f5 = new Farm(5, "Dundun Farm", "Dundun Land"); // Submitted By Athena Yeung
         Farm f6 = new Farm(6, "Not A Farm", "Pluto"); //Submitted By Lucianp
         Farm f7 = new Farm(7, "Potato Famine", "Dublin"); //Submitted By Christopher Xia
 
         Biennial p1 = new Biennial("Dundun Fruit", 2, 2);
+        Perennial p2 = new Perennial("Potato", 2, 2);
 
-
+ 
         /** User Interface Guideline
          * 
          *  Welcome Gardener!

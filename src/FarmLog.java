@@ -5,15 +5,15 @@ public class FarmLog {
     private int farmId;
     private String farmName;
     private String farmerName;
-    private String date;
-    private String plant;
+    private int date;
+    private int plantId;
     private String event;
 
-    public FarmLog(int farmId, String farmName, String farmerName, String date, String plant, String event) {
+    public FarmLog(int farmId, String farmName, String farmerName, int date, int plantId, String event) {
         this.farmId = farmId;
         this.farmName = farmName;
         this.farmerName = farmerName;
-        this.plant = plant;
+        this.plantId = plantId;
         this.date = date;
         this.event = event;
     }
@@ -26,12 +26,12 @@ public class FarmLog {
         return farmerName;
     }
 
-    public String getDate() {
+    public int getDate() {
         return date;
     }
 
-    public String getPlant() {
-        return plant;
+    public int getPlantId() {
+        return plantId;
     }
 
     public String getEvent() {

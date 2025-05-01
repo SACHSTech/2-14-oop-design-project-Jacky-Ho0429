@@ -22,50 +22,14 @@ public class Farm {
         String plantList = "";
         for (int i = 0; i < farmPlants.size(); i++) {
             Plant plant = farmPlants.get(i);
-            plantList += plant.getName();
+            plantList += plant.getPlantName();
             if (i != farmPlants.size() - 1) {
                 plantList += ", ";
             }
         }
         return plantList;
     }
-
-    public String checkPlants() {
-        String plantDisplayList = "";
-
-        for (int i = 0; i < farmPlants.size(); i++) {
-            int lastWaterDate = 0;
-            int lastDate = 0;
-            int currentLogDate = 0;
-            boolean needWater = false;
-            for (int j = 0; j < farmLog.size(); j++) {
-                if (farmLog.get(j).getPlant().equals(farmPlants.get(i).getName())) {
-                    currentLogDate = Integer.parseInt(farmLog.get(j).getDate());
-                    if (farmLog.get(j).getEvent().contains("watered")) {
-                        if (currentLogDate > lastWaterDate) {
-                            lastWaterDate = currentLogDate;
-                        }
-                    }
-                    if (currentLogDate > lastDate) {
-                        lastDate = currentLogDate;
-                    }
-                }
-            }
-
-            if ((lastDate - lastWaterDate) > farmPlants.get(i).getWaterInterval()) {
-                needWater = true;
-            } else {
-                needWater = false;
-            }
-
-            plantDisplayList += farmPlants.get(i).getName() + " (Needs Water: " + needWater + ")";
-            if (i != farmPlants.size() - 1) {
-                plantDisplayList += ", ";
-            }
-        }
-        return plantDisplayList;
-    }
-
+    
     public void getPlantSize(Plant plant) {
         farmPlants.add(plant);
     }
@@ -75,7 +39,7 @@ public class Farm {
     }
 
     public String getLog(int logNumber) {
-        return farmLog.get(logNumber - 1).toString() + " located at " + location;
+        return farmLog.get(logNumber - 1).toString() + " located at " + country;
     }
 
     public int getLogSize() {
@@ -90,11 +54,11 @@ public class Farm {
         return name;
     }
 
-    public String getLocation() {
-        return location;
+    public String getCountry() {
+        return country;
     }
 
     public String toString() {
-        return String.format("Id: %d\nName: %s\nLocation: %s\n", id, name, location);
+        return String.format("Id: %d\nName: %s\nLocation: %s\n", id, name, country);
     }
 }
