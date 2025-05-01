@@ -3,17 +3,24 @@ import java.util.List;
 
 public abstract class Plant {
 
-    private String farmName;
-    private String plantName;
-    private int waterInterval;
+    protected int farmId;
+    protected int plantId;
+    protected String plantName;
+    protected int waterInterval;
 
-    public Plant(String farmName, String plantName, int waterInterval) {
+    public Plant(int farmId, int plantId, String plantName, int waterInterval) {
+        this.farmId = farmId;
+        this.plantId = plantId;
         this.plantName = plantName;
         this.waterInterval = waterInterval;
     }
 
-    public String getFarmName() {
-        return farmName;
+    public int getFarmId() {
+        return farmId;
+    }
+
+    public int getPlantId() {
+        return plantId;
     }
 
     public String getPlantName() {
@@ -25,18 +32,20 @@ public abstract class Plant {
     }
 
     public Boolean isWatered(List<FarmLog> farmLog) {
-        
         int lastWaterDate = 0;
         int lastDate = 0;
         int currentLogDate = 0;
+
         for (int j = 0; j < farmLog.size(); j++) {
-            if (farmLog.get(j).getPlant().equals(plantName)) {
-                currentLogDate = Integer.parseInt(farmLog.get(j).getDate());
+            if (farmLog.get(j).getPlantId() == plantId) {
+                currentLogDate = farmLog.get(j).getDate();
+
                 if (farmLog.get(j).getEvent().contains("watered")) {
                     if (currentLogDate > lastWaterDate) {
                         lastWaterDate = currentLogDate;
                     }
                 }
+
                 lastDate = currentLogDate;
             }
         }
@@ -46,9 +55,7 @@ public abstract class Plant {
         } else {
             return false;
         }
-
     }
 
-    
-    
+    public abstract void displayInfo();
 }

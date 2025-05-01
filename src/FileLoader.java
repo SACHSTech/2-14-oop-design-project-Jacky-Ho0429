@@ -8,21 +8,58 @@ public final class FileLoader {
     static String line;
 
     private FileLoader() {
-
         throw new AssertionError("Utility class should not be instantiated");
-
     }
 
-    public static void loadReviews(String filePath, ArrayList<Farm> farmList) throws IOException {
+    public static void loadFarms(String filePath, ArrayList<Farm> farmList) throws IOException {
+        BufferedReader farms = new BufferedReader(new FileReader(filePath));
+        farms.readLine();
 
-        BufferedReader reviews = new BufferedReader(new FileReader(filePath));
+        while ((line = farms.readLine()) != null) {
+            String[] columns = line.split(",", 5);
+            int id = Integer.parseInt(columns[0]);
+            String name = columns[1];
+            String country = columns[2];
+            farmList.add(new Farm(id, name, country));
+        }
 
-        reviews.readLine();
+        farms.close();
+    }
 
-        while ((line = reviews.readLine()) != null) {
+    public static void loadPlants(String filePath, ArrayList<Farm> farmList) throws IOException {
+        BufferedReader plants = new BufferedReader(new FileReader(filePath));
+        plants.readLine();
 
-            String[] columns = line.split(",", 4);
+        while ((line = plants.readLine()) != null) {
+            String[] columns = line.split(",", 5);
+            int farmId = Integer.parseInt(columns[0]);
+            int plantId = Integer.parseInt(columns[1]);
+            String plantName = columns[2];
+            int waterInterval = Integer.parseInt(columns[3]);
+            int lifeSpan = Integer.parseInt(columns[4]);
 
+            for (int i = 0; i < farmList.size(); i++) {
+                if (farmList.get(i).getId() == farmId) {
+                    if (lifeSpan > 2) {
+                        farmList.get(i).addPlant(new Perennial(farmId, plantId, plantName, waterInterval, lifeSpan));
+                    } else if (lifeSpan == 2) {
+                        farmList.get(i).addPlant(new Biennial(farmId, plantId, plantName, waterInterval, lifeSpan));
+                    } else {
+                        farmList.get(i).addPlant(new Annual(farmId, plantId, plantName, waterInterval, lifeSpan));
+                    }
+                }
+            }
+        }
+
+        plants.close();
+    }
+
+    public static void loadLogs(String filePath, ArrayList<Farm> farmList) throws IOException {
+        BufferedReader logs = new BufferedReader(new FileReader(filePath));
+        logs.readLine();
+
+        while ((line = logs.readLine()) != null) {
+            String[] columns = line.split(",", 6);
             int farmId = Integer.parseInt(columns[0]);
             String farmName = columns[1];
             String farmerName = columns[2];
@@ -33,19 +70,12 @@ public final class FileLoader {
             FarmLog farmLog = new FarmLog(farmId, farmName, farmerName, date, plantId, event);
 
             for (int i = 0; i < farmList.size(); i++) {
-
                 if (farmList.get(i).getId() == farmId) {
-
                     farmList.get(i).addLog(farmLog);
-
                 }
-
             }
-
         }
 
-        reviews.close();
-
+        logs.close();
     }
-
 }

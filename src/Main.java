@@ -5,18 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    static ArrayList<Farm> farmList = new ArrayList<>();
     public static void main(String[] args) throws IOException {
-        Farm f1 = new Farm(1, "Kyojh Farm", "Canada");
-        Farm f2 = new Farm(2, "The Ho Farm", "BJ County"); // Submitted By Preston Wong
-        Farm f3 = new Farm(3, "Mash Farm", "Potat"); // Submitted By George Du
-        Farm f4 = new Farm(4, "Gethsemane Farm", "Isreal"); // Submitted By Joel Menezes
-        Farm f5 = new Farm(5, "Dundun Farm", "Dundun Land"); // Submitted By Athena Yeung
-        Farm f6 = new Farm(6, "Not A Farm", "Pluto"); //Submitted By Lucianp
-        Farm f7 = new Farm(7, "Potato Famine", "Dublin"); //Submitted By Christopher Xia
-
-        Biennial p1 = new Biennial("Dundun Fruit", 2, 2);
-        Perennial p2 = new Perennial("Potato", 2, 2);
-
+        FileLoader.loadFarms("src\\CSV Files\\Farms.csv", farmList);
+        FileLoader.loadPlants("src\\CSV Files\\Plants.csv", farmList);
+        FileLoader.loadLogs("src\\CSV Files\\FarmLogs.csv", farmList);
  
         /** User Interface Guideline
          * 
@@ -48,30 +41,5 @@ public class Main {
          *  
          *
          */
-
-        FarmLog l1 = new FarmLog(5, f5.getName(), "Jacky", "2", p1.getName(), "watered the " + p1.getName() );
-        FarmLog l2 = new FarmLog(5, f5.getName(), "Jacky", "5", p1.getName(), "found out the " + p1.getName() + " died");
-        FarmLog l3 = new FarmLog(5, f5.getName(), "Jacky", "8", p1.getName(), "watered the " + p1.getName());
-        
-        if (l1.getFarmId() == 5) {
-            f5.addLog(l1);
-        } else if (l1.getFarmId() == 6) {
-            f5.addLog(l1);
-        }
-
-        if (l2.getFarmId() == 5) {
-            f5.addLog(l2);
-        } else if (l2.getFarmId() == 6) {
-            f6.addLog(l2);
-        }
-
-        f5.addPlant(p1);
-
-        System.out.println(f5.getLog(1));
-        System.out.println(f5.getLog(2));
-        System.out.println(f5.checkPlants());
-        f5.addLog(l3);
-        System.out.println(f5.getLog(3));
-        System.out.println(f5.checkPlants());
     }
 }
