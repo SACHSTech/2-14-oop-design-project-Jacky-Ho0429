@@ -10,11 +10,7 @@ public class Perennial extends Plant {
         return lifeSpan;
     }
 
-    public void displayInfo() {
-        System.out.println("Plant ID: " + plantId);
-        System.out.println("Plant: " + plantName);
-        System.out.println("Watering Interval: " + waterInterval + " days");
-        System.out.println("Life Span: " + lifeSpan + " years");
+    public String displayInfo() {
+        return "Plant ID: " + plantId + "\n" + "Plant: " + plantName + "\n" + "Plant Type: Perennial\n" + "Watering Interval: " + waterInterval + " days\n" + "Life Span: " + lifeSpan + " years\n";
     }
-
 }

@@ -18,20 +18,14 @@ public class Farm {
         farmPlants.add(plant);
     }
 
-    public String getPlants() {
-        String plantList = "";
-        for (int i = 0; i < farmPlants.size(); i++) {
-            Plant plant = farmPlants.get(i);
-            plantList += plant.getPlantName();
-            if (i != farmPlants.size() - 1) {
-                plantList += ", ";
-            }
+    public void getPlants() {
+        for(int i = 0; i < farmPlants.size(); i++) {
+            System.out.println(farmPlants.get(i).displayInfo());
         }
-        return plantList;
     }
     
-    public void getPlantSize(Plant plant) {
-        farmPlants.add(plant);
+    public int getPlantSize() {
+        return farmPlants.size();
     }
 
     public void addLog(FarmLog event) {

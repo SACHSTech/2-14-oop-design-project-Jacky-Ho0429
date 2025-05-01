@@ -32,6 +32,7 @@ public abstract class Plant {
     }
 
     public Boolean isWatered(List<FarmLog> farmLog) {
+        
         int lastWaterDate = 0;
         int lastDate = 0;
         int currentLogDate = 0;
@@ -57,5 +58,6 @@ public abstract class Plant {
         }
     }
 
-    public abstract void displayInfo();
+    public abstract String displayInfo();
+
 }

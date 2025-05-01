@@ -8,7 +8,9 @@ public final class FileLoader {
     static String line;
 
     private FileLoader() {
+
         throw new AssertionError("Utility class should not be instantiated");
+
     }
 
     public static void loadFarms(String filePath, ArrayList<Farm> farmList) throws IOException {
@@ -16,7 +18,7 @@ public final class FileLoader {
         farms.readLine();
 
         while ((line = farms.readLine()) != null) {
-            String[] columns = line.split(",", 5);
+            String[] columns = line.split(",");
             int id = Integer.parseInt(columns[0]);
             String name = columns[1];
             String country = columns[2];
@@ -24,14 +26,17 @@ public final class FileLoader {
         }
 
         farms.close();
+
     }
 
     public static void loadPlants(String filePath, ArrayList<Farm> farmList) throws IOException {
+
         BufferedReader plants = new BufferedReader(new FileReader(filePath));
         plants.readLine();
 
         while ((line = plants.readLine()) != null) {
-            String[] columns = line.split(",", 5);
+
+            String[] columns = line.split(",");
             int farmId = Integer.parseInt(columns[0]);
             int plantId = Integer.parseInt(columns[1]);
             String plantName = columns[2];
@@ -49,17 +54,20 @@ public final class FileLoader {
                     }
                 }
             }
+
         }
 
         plants.close();
+
     }
 
     public static void loadLogs(String filePath, ArrayList<Farm> farmList) throws IOException {
+        
         BufferedReader logs = new BufferedReader(new FileReader(filePath));
         logs.readLine();
 
         while ((line = logs.readLine()) != null) {
-            String[] columns = line.split(",", 6);
+            String[] columns = line.split(",");
             int farmId = Integer.parseInt(columns[0]);
             String farmName = columns[1];
             String farmerName = columns[2];
@@ -75,7 +83,8 @@ public final class FileLoader {
                 }
             }
         }
-
+        
         logs.close();
+
     }
 }
