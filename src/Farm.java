@@ -5,8 +5,8 @@ public class Farm {
     private int id;
     private String name;
     private String country;
-    private List<Plant> farmPlants = new ArrayList<>();
-    private List<FarmLog> farmLog = new ArrayList<>();
+    private ArrayList<Plant> farmPlants = new ArrayList<>();
+    private ArrayList<FarmLog> farmLog = new ArrayList<>();
 
     public Farm(int id, String name, String country) {
         this.id = id;
