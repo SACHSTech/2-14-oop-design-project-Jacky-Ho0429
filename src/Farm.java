@@ -23,7 +23,24 @@ public class Farm {
             System.out.println(farmPlants.get(i).displayInfo());
         }
     }
+
+    public void isPlantsWatered(ArrayList<Integer> ids) {
+        for (Plant plant : farmPlants) {
+            if (ids.contains(plant.getPlantId())) {
+                System.out.println(plant.getPlantName() + " (Watered: " + plant.isWatered(farmLog) + ")");
+            }
+        }
+    }
     
+    
+    public ArrayList<Integer> getPlantIds() {
+        ArrayList<Integer> ids = new ArrayList<>();
+        for (Plant plant : farmPlants) {
+            ids.add(plant.getPlantId());
+        }
+        return ids;
+    }
+
     public int getPlantSize() {
         return farmPlants.size();
     }
