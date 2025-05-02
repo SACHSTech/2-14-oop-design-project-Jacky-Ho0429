@@ -32,8 +32,17 @@ public class Farm {
         farmLog.add(event);
     }
 
-    public String getLog(int logNumber) {
-        return farmLog.get(logNumber - 1).toString() + " located at " + country;
+    public void getLogs() {
+        for (FarmLog log : farmLog) {
+            String plantName = "";
+            for (Plant plant : farmPlants) {
+                if (plant.getPlantId() == log.getPlantId()) {
+                    plantName = plant.getPlantName();
+                    break;
+                }
+            }
+            System.out.println(plantName + " - " + log.toString() + " located at " + country);
+        }
     }
 
     public int getLogSize() {

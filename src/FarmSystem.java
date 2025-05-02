@@ -36,7 +36,7 @@ public class FarmSystem {
         while (choice > 5 || choice < 0) {
             System.out.println("What would you like to do? Enter a number from 1 - 4: ");
             System.out.println("1. Check plants at the farm");
-            System.out.println("2. Check a log by giving it's id");
+            System.out.println("2. Check the logs of the farm");
             System.out.println("3. Add a new plant to the farm");
             System.out.println("4. Add a new garden log");
             System.out.println("5. Check If A Plant Needs Watering");
@@ -51,8 +51,7 @@ public class FarmSystem {
                     break;
 
                 case 2:
-                    System.out.println("What is the ID of the log which you are looking for?")
-                    farmList.get(farmId).getLog(Integer.parseInt(userInput.readLine()));
+                    farmList.get(farmId).getLogs();
                     break;
 
                 case 3:
@@ -79,7 +78,7 @@ public class FarmSystem {
 
                 case 4:
                     while (date > 365 || date < 1) {
-                        System.out.println("What day of the year is it?");
+                        System.out.println("What day of the year is it? Provide a number from 1 - 365");
                         date = Integer.parseInt(userInput.readLine());
                     }
 
@@ -108,7 +107,7 @@ public class FarmSystem {
 
                     }
 
-                    farmList.get(farmId).addLog(new FarmLog(farmId, farmList.get(farmId).getName(), farmerName, date, plantId, event));
+                    farmList.get(farmId).addLog(new FarmLog(farmId + 1, farmList.get(farmId).getName(), farmerName, date, plantId, event));
                     System.out.println("New log added to " + farmList.get(farmId).getName() + ".");
                     break;
 
