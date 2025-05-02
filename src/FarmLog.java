@@ -22,7 +22,7 @@ public class FarmLog {
         return farmId;
     }
 
-    public String getName() {
+    public String getFarmName() {
         return farmerName;
     }
 

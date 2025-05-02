@@ -15,13 +15,17 @@ public class Main {
         
         String name = "";
 
-        while (Integer.parseInt(name) != 0) {
+        while (true) {
 
             System.out.println("Welcome Gardener, What Is Your Name? (Enter 0 to exit system)");
             name = userInput.readLine();
 
             FarmSystem.selectFarm(userInput);
-            FarmSystem.farmInteractions(farmList, userInput);
+            FarmSystem.farmInteractions(farmList, userInput, name);
+
+            if (name.equals("0")) {
+                break;
+            }
 
         }
     }
