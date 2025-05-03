@@ -1,0 +1,71 @@
+farmId,farmName,farmerName,date,plantId,event
+1,Kyojh Farm,Jacky Ho,23,1,watered
+1,Kyojh Farm,Jacky Ho,45,2,fertilized
+1,Kyojh Farm,Jacky Ho,67,3,inspected
+1,Kyojh Farm,Jacky Ho,89,4,harvested
+1,Kyojh Farm,Jacky Ho,91,5,watered
+1,Kyojh Farm,Jacky Ho,112,1,removed nearby weeds
+1,Kyojh Farm,Jacky Ho,136,2,inspected
+1,Kyojh Farm,Jacky Ho,142,3,watered
+1,Kyojh Farm,Jacky Ho,167,4,inspected
+1,Kyojh Farm,Jacky Ho,184,5,harvested
+2,The Ho Farm,Preston Wong,15,11,watered
+2,The Ho Farm,Preston Wong,32,12,inspected
+2,The Ho Farm,Preston Wong,45,13,fertilized
+2,The Ho Farm,Preston Wong,60,14,inspected
+2,The Ho Farm,Preston Wong,73,15,harvested
+2,The Ho Farm,Preston Wong,98,11,planted
+2,The Ho Farm,Preston Wong,121,12,inspected
+2,The Ho Farm,Preston Wong,143,13,watered
+2,The Ho Farm,Preston Wong,159,14,inspected
+2,The Ho Farm,Preston Wong,178,15,watered
+3,Mash Farm,George Du,10,21,inspected
+3,Mash Farm,George Du,18,22,watered
+3,Mash Farm,George Du,37,23,fertilized
+3,Mash Farm,George Du,59,24,harvested
+3,Mash Farm,George Du,81,25,inspected
+3,Mash Farm,George Du,94,21,watered
+3,Mash Farm,George Du,115,22,inspected
+3,Mash Farm,George Du,139,23,harvested
+3,Mash Farm,George Du,158,24,removed nearby weeds
+3,Mash Farm,George Du,177,25,watered
+4,Gethsemane Farm,Joel Menezes,20,31,watered
+4,Gethsemane Farm,Joel Menezes,41,32,inspected
+4,Gethsemane Farm,Joel Menezes,65,33,harvested
+4,Gethsemane Farm,Joel Menezes,88,34,inspected
+4,Gethsemane Farm,Joel Menezes,105,35,fertilized
+4,Gethsemane Farm,Joel Menezes,129,31,inspected
+4,Gethsemane Farm,Joel Menezes,147,32,inspected
+4,Gethsemane Farm,Joel Menezes,161,33,watered
+4,Gethsemane Farm,Joel Menezes,174,34,removed nearby weeds
+4,Gethsemane Farm,Joel Menezes,191,35,harvested
+5,Dundun Farm,Athena Yeung,11,41,watered
+5,Dundun Farm,Athena Yeung,27,42,inspected
+5,Dundun Farm,Athena Yeung,49,43,inspected
+5,Dundun Farm,Athena Yeung,66,44,fertilized
+5,Dundun Farm,Athena Yeung,90,45,removed nearby weeds
+5,Dundun Farm,Athena Yeung,102,41,inspected
+5,Dundun Farm,Athena Yeung,125,42,harvested
+5,Dundun Farm,Athena Yeung,144,43,watered
+5,Dundun Farm,Athena Yeung,168,44,inspected
+5,Dundun Farm,Athena Yeung,185,45,fertilized
+6,Not A Farm,Lucian Chen,8,51,watered
+6,Not A Farm,Lucian Chen,14,52,fertilized
+6,Not A Farm,Lucian Chen,35,53,inspected
+6,Not A Farm,Lucian Chen,54,54,watered
+6,Not A Farm,Lucian Chen,76,55,inspected
+6,Not A Farm,Lucian Chen,93,51,inspected
+6,Not A Farm,Lucian Chen,117,52,planted
+6,Not A Farm,Lucian Chen,140,53,inspected
+6,Not A Farm,Lucian Chen,166,54,watered
+6,Not A Farm,Lucian Chen,182,55,fertilized
+7,Potato Famine,Christopher Xia,12,61,inspected
+7,Potato Famine,Christopher Xia,29,62,watered
+7,Potato Famine,Christopher Xia,48,63,harvested
+7,Potato Famine,Christopher Xia,63,64,fertilized
+7,Potato Famine,Christopher Xia,77,65,removed nearby weeds
+7,Potato Famine,Christopher Xia,101,61,watered
+7,Potato Famine,Christopher Xia,119,62,inspected
+7,Potato Famine,Christopher Xia,137,63,inspected
+7,Potato Famine,Christopher Xia,153,64,fertilized
+7,Potato Famine,Christopher Xia,179,65,harvested
