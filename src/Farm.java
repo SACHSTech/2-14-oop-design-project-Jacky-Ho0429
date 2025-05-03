@@ -31,6 +31,24 @@ public class Farm {
             }
         }
     }
+
+    public void isHighMaintenance(ArrayList<Integer> ids) {
+        boolean highMaintenance = false;
+        for (Plant plant : farmPlants) {
+            if (ids.contains(plant.getPlantId())) {
+                if (plant.getWaterInterval() < 2) {
+                    highMaintenance = true;
+                    System.out.println(plant.getPlantName() + " requires high maintenance as it needs to be watered every day.");
+                } else {
+                    highMaintenance = false;
+                }
+            }
+        }
+
+        if (highMaintenance == false) {
+            System.out.println("There are no high maintenance plants at the farm.");
+        }
+    }
     
     
     public ArrayList<Integer> getPlantIds() {

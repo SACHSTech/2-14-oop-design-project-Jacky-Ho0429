@@ -40,6 +40,7 @@ public class FarmSystem {
             System.out.println("3. Add a new plant to the farm");
             System.out.println("4. Add a new garden log");
             System.out.println("5. Check If A Plant Needs Watering");
+            System.out.println("6. Check Which PLants Require High Maintenance");
             System.out.println("0. To Exit");
 
             choice = Integer.parseInt(userInput.readLine());
@@ -58,10 +59,10 @@ public class FarmSystem {
                     System.out.println("What is the name of the plant you are adding to the farm?");
                     plantName = userInput.readLine();
 
-                    System.out.println("How often does this plant need watering?");
+                    System.out.println("How often does this plant need watering? Provide intervals of days");
                     waterInterval = Integer.parseInt(userInput.readLine());
 
-                    System.out.println("What is the lifespan of this plant?");
+                    System.out.println("What is the lifespan of this plant? Provide intervals of years");
                     lifeSpan = Integer.parseInt(userInput.readLine());
 
                     if (lifeSpan > 2) {
@@ -123,6 +124,10 @@ public class FarmSystem {
 
                 case 5:
                     farmList.get(farmId).isPlantsWatered(plantIds);
+                    break;
+
+                case 6:
+                    farmList.get(farmId).isHighMaintenance(plantIds);
                     break;
 
                 case 0:
